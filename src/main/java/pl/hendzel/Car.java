@@ -4,12 +4,12 @@ import java.math.BigDecimal;
 
 public class Car {
 
-    private String brand;
-    private String make;
-    private Color color;
-    private BigDecimal fuelConsumption;
-    private int fuelTankCapacity;
-    private Engine engine;
+    private final String brand;
+    private final String make;
+    private final Color color;
+    private final BigDecimal fuelConsumption;
+    private final int fuelTankCapacity;
+    private final Engine engine;
 
     private Car(String brand, String make, Color color, BigDecimal fuelConsumption, int fuelTankCapacity, Engine engine) {
         this.brand = brand;
@@ -135,13 +135,13 @@ public class Car {
 
         @Override
         public CarCreator withDieselEngine() {
-            this.engine = new DieselEngine();
+            this.engine = new Engine.DieselEngine();
             return this;
         }
 
         @Override
         public CarCreator withElectricalEngine() {
-            this.engine = new ElectricalEngine();
+            this.engine = new Engine.ElectricalEngine();
             return this;
         }
 
